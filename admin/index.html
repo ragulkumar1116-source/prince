@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | CaptureFlex</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100" class="rounded site-logo-img" style="width: 32px; height: 32px; object-fit: cover;" alt="Logo">
+        <span class="navbar-brand-text admin-brand-text">CaptureFlex Admin</span>
+      </a>
+      <div class="ms-auto d-flex align-items-center gap-3">
+        <a href="../index.html" class="btn btn-cf-outline btn-sm"><i class="bi bi-globe me-1"></i> Live Storefront</a>
+        <div id="navbar-auth-container"></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="text-muted extra-small text-uppercase tracking-wider fw-bold mb-3 px-2">Navigation</div>
+      <a href="index.html" class="admin-nav-item active"><i class="bi bi-speedometer2"></i> Dashboard Overview</a>
+      <a href="payments.html" class="admin-nav-item"><i class="bi bi-wallet2"></i> Payment Approvals</a>
+      <a href="media.html" class="admin-nav-item"><i class="bi bi-images"></i> Media Gallery</a>
+      <a href="products.html" class="admin-nav-item"><i class="bi bi-box-seam"></i> Products Manager</a>
+      <a href="files.html" class="admin-nav-item"><i class="bi bi-cloud-arrow-down"></i> Download Files</a>
+      <a href="licenses.html" class="admin-nav-item"><i class="bi bi-key"></i> Serial Licenses</a>
+      <a href="customers.html" class="admin-nav-item"><i class="bi bi-people"></i> Customers Directory</a>
+      <a href="support.html" class="admin-nav-item"><i class="bi bi-headset"></i> Support Desk</a>
+      <a href="settings.html" class="admin-nav-item"><i class="bi bi-gear"></i> Site Settings</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+          <h2 class="fw-bold text-white mb-1">Dashboard Overview</h2>
+          <p class="text-muted small mb-0">System performance, telemetry & link distribution stats</p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="row g-3 mb-5">
+        <div class="col-md-3">
+          <a href="payments.html" class="text-decoration-none">
+            <div class="stat-card border border-warning border-opacity-25">
+              <div class="extra-small text-warning text-uppercase fw-bold">Pending Payments</div>
+              <div class="stat-number text-warning" id="stat-pay-count">0</div>
+              <div class="extra-small text-muted">Requires UTR Approval</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-card">
+            <div class="extra-small text-muted text-uppercase fw-bold">Total Products</div>
+            <div class="stat-number text-gradient" id="stat-prod-count">0</div>
+            <div class="extra-small text-muted">Active Software Items</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-card">
+            <div class="extra-small text-muted text-uppercase fw-bold">External Download Links</div>
+            <div class="stat-number text-white" id="stat-file-count">0</div>
+            <div class="extra-small text-muted">ZXP, EXE, DMG Files</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stat-card">
+            <div class="extra-small text-muted text-uppercase fw-bold">Issued Serial Keys</div>
+            <div class="stat-number text-gradient" id="stat-lic-count">0</div>
+            <div class="extra-small text-muted">Active Customer Licenses</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="glass-card p-4">
+            <h5 class="fw-bold text-white mb-3">Quick Navigation Shortcuts</h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <a href="payments.html" class="glass-card p-3 d-flex align-items-center gap-3 text-decoration-none border border-warning border-opacity-25">
+                  <i class="bi bi-wallet2 fs-2 text-warning"></i>
+                  <div>
+                    <div class="fw-bold text-white">Payment Approvals</div>
+                    <div class="extra-small text-muted">Approve UTRs & issue serial keys</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="media.html" class="glass-card p-3 d-flex align-items-center gap-3 text-decoration-none">
+                  <i class="bi bi-images fs-2 text-gradient"></i>
+                  <div>
+                    <div class="fw-bold text-white">Media Gallery Manager</div>
+                    <div class="extra-small text-muted">Add & reorder 20+ images/videos</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="products.html" class="glass-card p-3 d-flex align-items-center gap-3 text-decoration-none">
+                  <i class="bi bi-box-seam fs-2 text-gradient"></i>
+                  <div>
+                    <div class="fw-bold text-white">Products Manager</div>
+                    <div class="extra-small text-muted">Create & edit software plugins</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="files.html" class="glass-card p-3 d-flex align-items-center gap-3 text-decoration-none">
+                  <i class="bi bi-cloud-arrow-down fs-2 text-gradient-purple"></i>
+                  <div>
+                    <div class="fw-bold text-white">External Downloads</div>
+                    <div class="extra-small text-muted">Register direct HTTP/HTTPS URLs</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="glass-card p-4">
+            <h5 class="fw-bold text-white mb-3">System Activity</h5>
+            <div id="admin-recent-activity">
+              <!-- Rendered by admin.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Firebase Web SDK Compat Libraries -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/firebase-config.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CF_ADMIN.renderDashboard();
+    });
+  </script>
+</body>
+</html>

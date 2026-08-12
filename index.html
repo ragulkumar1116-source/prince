@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaptureFlex | Digital Downloads & Link-Based Software Management</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Manage external download links for ZXP packages, EXE/DMG installers, generate serial key licenses, and process instant digital software orders.">
+  <meta name="keywords" content="Adobe CC plugins, ZXP installer, Serial key licensing, External link downloads, Software manager">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100" class="rounded site-logo-img" style="width: 32px; height: 32px; object-fit: cover;" alt="Logo">
+        <span class="navbar-brand-text">CaptureFlex</span>
+      </a>
+      <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon text-white"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link-custom active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="products.html">Products Catalog</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="downloads.html">Downloads Portal</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="support.html">Support Desk</a></li>
+        </ul>
+        <div id="navbar-auth-container"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <header class="hero-header">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge badge-purple mb-3">
+            <i class="bi bi-lightning-charge-fill me-1"></i> Software License Engine
+          </span>
+          <h1 class="hero-title text-white mb-3" id="hero-dynamic-title">
+            Build, Deploy & Manage <span class="text-gradient">Link-Based Software</span> Packages
+          </h1>
+          <p class="hero-subtitle text-muted mb-4" id="hero-dynamic-subtitle">
+            Instant direct download access to Adobe CC ZXP plugins, Windows utilities, Mac bundles, and Indian currency serial key licensing.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="products.html" class="btn btn-cf-primary">
+              <i class="bi bi-grid-fill me-2"></i> Explore Products Catalog
+            </a>
+            <a href="downloads.html" class="btn btn-cf-outline">
+              <i class="bi bi-key-fill me-2"></i> My Serial Licenses
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="position-relative d-inline-block">
+            <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 rounded-4" style="background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, rgba(0,0,0,0) 70%); filter: blur(30px);"></div>
+            <img id="hero-dynamic-img" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200" class="img-fluid rounded-4 shadow-lg border border-secondary border-opacity-25" style="max-height: 380px; object-fit: cover;" alt="Hero Banner">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Featured Products Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="d-flex align-items-end justify-content-between mb-4">
+          <div>
+            <h6 class="text-gradient fw-bold text-uppercase tracking-wider">Featured Release</h6>
+            <h2 class="fw-bold text-white mb-0">Flagship Software & Extensions</h2>
+          </div>
+          <a href="products.html" class="btn btn-cf-outline btn-sm">View Full Catalog <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+
+        <div class="row" id="featured-products-container">
+          <!-- Dynamically populated by products.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Software Demos & Interactive Media Showcase Gallery (20+ Items) -->
+    <section class="py-5 border-top border-secondary border-opacity-25" style="background: rgba(17, 24, 39, 0.4);">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+          <div>
+            <h6 class="text-gradient fw-bold text-uppercase">Interactive Media Showcase</h6>
+            <h2 class="fw-bold text-white mb-0">Software Previews, GUI Panels & Video Demos</h2>
+          </div>
+          <div class="d-flex flex-wrap gap-2" id="media-category-filters">
+            <!-- Dynamically populated by products.js -->
+          </div>
+        </div>
+
+        <div class="row g-4" id="media-showcase-container">
+          <!-- Dynamically populated by products.js (20 sample images and video walkthroughs) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose CaptureFlex -->
+    <section class="py-5 border-top border-secondary border-opacity-25">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h6 class="text-gradient fw-bold text-uppercase">Architecture Highlights</h6>
+          <h2 class="fw-bold text-white">Engineered for Fast Delivery</h2>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon mb-3">
+                <i class="bi bi-link-45deg"></i>
+              </div>
+              <h5 class="fw-bold text-white mb-2">Zero-Storage Overhead</h5>
+              <p class="text-muted small mb-0">Store all binaries, installers, and screenshots as high-speed external direct download URLs.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon purple mb-3">
+                <i class="bi bi-key-fill"></i>
+              </div>
+              <h5 class="fw-bold text-white mb-2">Serial Key System</h5>
+              <p class="text-muted small mb-0">Assign unique activation codes, track expiration, and manage licenses per customer with star masking.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="stat-icon green mb-3">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <h5 class="fw-bold text-white mb-2">Realtime DB & Role Guards</h5>
+              <p class="text-muted small mb-0">Strict admin security rules protect products, version management, and customer accounts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Media Lightbox Preview Modal -->
+  <div class="modal fade" id="mediaLightboxModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content modal-content-cf">
+        <div class="modal-header modal-header-cf border-0">
+          <h5 class="modal-title fw-bold text-white" id="media-modal-title">Media Showcase</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-0 text-center" id="media-modal-body">
+          <!-- Dynamically populated by products.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with Dynamic Company Name & Address Sync -->
+  <footer>
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-5">
+          <a class="navbar-brand d-flex align-items-center gap-2 mb-3" href="index.html">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100" class="rounded site-logo-img" style="width: 32px; height: 32px; object-fit: cover;" alt="Logo">
+            <span class="navbar-brand-text">CaptureFlex</span>
+          </a>
+          <p class="text-white fw-bold mb-1" id="footer-company-name">CaptureFlex Software Solutions Pvt. Ltd.</p>
+          <p class="text-muted small mb-2" id="footer-company-address">Plot 42, Innovation Tech Park, MG Road, Bengaluru, Karnataka - 560001, India</p>
+          <p class="text-muted small mb-0"><span id="footer-company-phone">Tel: +91 98765 43210</span> | <span id="footer-support-email">support@captureflex.in</span></p>
+        </div>
+        <div class="col-lg-3 col-6">
+          <h6 class="fw-bold text-white mb-3">Portal Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="products.html" class="text-muted text-decoration-none">Products Catalog</a></li>
+            <li class="mb-2"><a href="downloads.html" class="text-muted text-decoration-none">My Downloads</a></li>
+            <li class="mb-2"><a href="support.html" class="text-muted text-decoration-none">Support Desk</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-6">
+          <h6 class="fw-bold text-white mb-3">Admin Portal</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="admin/admin-auth.html" class="text-muted text-decoration-none"><i class="bi bi-lock me-1"></i> Admin Sign In / Register</a></li>
+            <li class="mb-2"><a href="admin/settings.html" class="text-muted text-decoration-none"><i class="bi bi-gear me-1"></i> Edit Homepage & Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top border-secondary border-opacity-25 pt-4 text-center small text-muted">
+        &copy; 2026 CaptureFlex Engine. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase Web SDK Compat Libraries -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/products.js"></script>
+</body>
+</html>

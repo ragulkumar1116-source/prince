@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Checkout & License Verification | CaptureFlex</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100" class="rounded site-logo-img" style="width: 32px; height: 32px; object-fit: cover;" alt="Logo">
+        <span class="navbar-brand-text">CaptureFlex</span>
+      </a>
+      <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon text-white"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link-custom" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="products.html">Products Catalog</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="downloads.html">Downloads Portal</a></li>
+          <li class="nav-item"><a class="nav-link-custom" href="support.html">Support Desk</a></li>
+        </ul>
+        <div id="navbar-auth-container"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container" style="max-width: 1000px;">
+      
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+          <h2 class="fw-bold text-white mb-1"><i class="bi bi-shield-lock-fill text-gradient me-2"></i> Payment Checkout</h2>
+          <p class="text-muted small mb-0">Scan QR Code or transfer via UPI/Bank, then enter your Transaction UTR ID below</p>
+        </div>
+        <a href="products.html" class="btn btn-cf-outline btn-sm"><i class="bi bi-arrow-left me-1"></i> Catalog</a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Left: Order Summary & QR Code -->
+        <div class="col-lg-6">
+          
+          <!-- Order Summary Card -->
+          <div class="glass-card p-4 mb-4">
+            <h5 class="fw-bold text-white mb-3"><i class="bi bi-cart-check text-gradient me-2"></i> Order Summary</h5>
+            
+            <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-secondary border-opacity-25">
+              <div>
+                <div class="fw-bold text-white fs-5" id="chk-prod-name">Software Product</div>
+                <span class="badge badge-cf" id="chk-prod-version">v1.0.0</span>
+              </div>
+              <div class="text-end">
+                <span class="text-muted extra-small d-block">Total Payable Amount</span>
+                <span class="fs-2 fw-bold text-gradient" id="chk-total-price">₹0</span>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <span class="text-muted extra-small">Customer Account:</span>
+              <div class="text-white small fw-bold" id="chk-user-name">Customer Name</div>
+              <div class="text-muted extra-small" id="chk-user-email">customer@domain.com</div>
+            </div>
+
+            <div>
+              <span class="text-muted extra-small">Checkout Session Timestamp:</span>
+              <div class="font-monospace text-white small" id="chk-timestamp">--</div>
+            </div>
+          </div>
+
+          <!-- Deposit Methods & QR Code Card -->
+          <div class="glass-card p-4">
+            <h5 class="fw-bold text-white mb-3"><i class="bi bi-qr-code-scan text-gradient me-2"></i> Scan UPI QR Code</h5>
+            
+            <div class="text-center mb-3 p-3 rounded" style="background: rgba(255,255,255,0.03);">
+              <img id="chk-qr-img" src="" class="img-fluid rounded border border-secondary p-2 bg-white" style="max-width: 200px;" alt="UPI QR Code">
+              <div class="extra-small text-muted mt-2">Scan using GPay, PhonePe, Paytm, BHIM, or any UPI App</div>
+            </div>
+
+            <!-- UPI & Bank Details Accordion -->
+            <div class="p-3 glass-card mb-3">
+              <div class="extra-small text-gradient fw-bold text-uppercase mb-1">Direct UPI ID</div>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="font-monospace fw-bold text-white fs-6" id="chk-upi-id">captureflex@upi</span>
+                <span class="badge badge-purple" id="chk-upi-merchant">CaptureFlex</span>
+              </div>
+            </div>
+
+            <div class="p-3 glass-card">
+              <div class="extra-small text-gradient-purple fw-bold text-uppercase mb-2">NEFT / RTGS / IMPS Bank Transfer Details</div>
+              <div class="row g-2 extra-small text-muted">
+                <div class="col-6">Account Holder: <strong class="text-white d-block" id="chk-bank-holder">CaptureFlex</strong></div>
+                <div class="col-6">Bank Name: <strong class="text-white d-block" id="chk-bank-name">HDFC Bank</strong></div>
+                <div class="col-6">Account No: <strong class="text-white d-block font-monospace" id="chk-bank-acc">50200012345678</strong></div>
+                <div class="col-6">IFSC Code: <strong class="text-white d-block font-monospace" id="chk-bank-ifsc">HDFC0001234</strong></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Verification UTR Submission Form -->
+        <div class="col-lg-6">
+          <div class="glass-card p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold text-white mb-2"><i class="bi bi-send-check-fill text-gradient me-2"></i> Submit Payment Verification</h5>
+              <p class="text-muted small mb-4">After completing your payment transfer, enter the 12-digit UTR or Transaction Reference ID below for admin confirmation.</p>
+
+              <form onsubmit="CF_PRODUCT.submitPaymentTxn(event)">
+                
+                <div class="mb-3">
+                  <label class="form-label text-muted small fw-bold">Select Payment Transfer Method</label>
+                  <select id="chk-pay-method" class="form-select form-select-cf">
+                    <option value="UPI Instant (GPay / PhonePe / Paytm)">UPI Instant (GPay / PhonePe / Paytm)</option>
+                    <option value="NEFT / IMPS Bank Transfer">NEFT / IMPS / RTGS Bank Transfer</option>
+                    <option value="Credit / Debit Card Transfer">Credit / Debit Card Transfer</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label text-muted small fw-bold">12-Digit Transaction Reference ID / UTR Number <span class="text-danger">*</span></label>
+                  <input type="text" id="chk-txn-id" class="form-control form-control-cf font-monospace fs-5 fw-bold text-white" required placeholder="e.g. 423910283741 or UPI/123456789">
+                  <div class="form-text text-muted extra-small">Found in your payment app receipt (Google Pay, PhonePe, Paytm, or Bank SMS).</div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label text-muted small fw-bold">Customer Notes (Optional)</label>
+                  <textarea id="chk-notes" class="form-control form-control-cf" rows="3" placeholder="Enter bank reference name or payment remarks..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-cf-primary btn-lg w-100 py-3">
+                  <i class="bi bi-check-circle-fill me-2"></i> Submit Payment Verification Request
+                </button>
+
+              </form>
+            </div>
+
+            <div class="pt-4 mt-4 border-top border-secondary border-opacity-25 text-center extra-small text-muted">
+              <i class="bi bi-shield-lock me-1 text-gradient"></i> All payment submissions are recorded in Realtime Database for instant admin review.
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container text-center small text-muted">
+      &copy; 2026 CaptureFlex Engine. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Firebase Web SDK Compat Libraries -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      CF_PRODUCT.renderCheckoutPage();
+    });
+  </script>
+</body>
+</html>
