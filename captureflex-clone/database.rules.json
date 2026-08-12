@@ -1,0 +1,34 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "payments": {
+      ".read": true,
+      ".write": true
+    },
+    "users": {
+      ".read": true,
+      ".write": true
+    },
+    "products": {
+      ".read": true,
+      ".write": true
+    },
+    "files": {
+      ".read": true,
+      ".write": true
+    },
+    "licenses": {
+      ".read": true,
+      ".write": true
+    },
+    "support": {
+      ".read": true,
+      ".write": true
+    },
+    "settings": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
